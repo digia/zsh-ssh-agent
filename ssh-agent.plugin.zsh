@@ -18,7 +18,7 @@ function _start_agent() {
 }
 
 # Get the filename to store/lookup the environment from
-_ssh_env_cache="$HOME/.ssh/environment-$SHORT_HOST"
+_ssh_env_cache="$HOME/.ssh/environment-${HOST:-$(hostname)}"
 
 # test if agent-forwarding is enabled
 zstyle -b :omz:plugins:ssh-agent agent-forwarding _agent_forwarding
